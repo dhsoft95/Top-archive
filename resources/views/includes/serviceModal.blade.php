@@ -363,7 +363,7 @@
 
     .section-title {
         font-size: 1.125rem;
-        color: #1e293b;
+        color: #1e293b !important;
         margin-bottom: 0.75rem;
         display: flex;
         align-items: center;

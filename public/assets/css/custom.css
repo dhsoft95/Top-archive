@@ -976,18 +976,7 @@ body {
 .section:nth-child(2) .section-badge { animation-delay: 0.5s; }
 .section:nth-child(3) .section-badge { animation-delay: 0.7s; }
 .section:nth-child(4) .section-badge { animation-delay: 0.9s; }
-/* Modal styles */
-/*.modal-content {*/
-/*    background-color: #000;*/
-/*    border: none;*/
-/*}*/
 
-/*.modal-header {*/
-/*    padding: 0.5rem;*/
-/*    position: absolute;*/
-/*    right: 0;*/
-/*    z-index: 1;*/
-/*}*/
 
 .btn-close {
     background-color: white;

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Primary Meta Tags -->
     <title>@yield('title', 'Top Archive - Africa\'s Leading Document Management & Storage Solutions')</title>
     <meta name="title" content="Top Archive - Africa's Leading Document Management & Storage Solutions">
@@ -15,7 +14,6 @@
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="generator" content="Top Archive">
-
 
 
     <!-- Open Graph / Facebook -->

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="section-header">
             <h2 class="section-title" style="color: black">Certifications</h2>
-            <div class="section-title-underline"></div>
+{{--            <div class="section-title-underline"></div>--}}
             <p class="section-subtitle">Internationally recognized standards we adhere to across our operations</p>
         </div>
 

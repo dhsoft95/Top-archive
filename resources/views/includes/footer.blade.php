@@ -42,7 +42,7 @@
             <!-- Company Links Column -->
             <div class="col-md-2 mb-4">
                 <div class="footer-section">
-                    <h5 class="section-title">{{ __('messages.company') }}</h5>
+                    <h5 class="section-title" style="color: white!important;">{{ __('messages.company') }}</h5>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
@@ -57,7 +57,7 @@
             <!-- Ghana Office -->
             <div class="col-md-2 mb-4">
                 <div class="footer-section">
-                    <h5 class="section-title">{{ __('messages.branches') }}</h5>
+                    <h5 class="section-title" style="color: white!important;">{{ __('messages.branches') }}</h5>
                     <div class="branch-info">
                         <div class="branch-header">
                             <span class="country-badge">GH</span>

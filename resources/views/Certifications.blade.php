@@ -1,82 +1,103 @@
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-yellow-50 overflow-hidden">
+    <!-- Background decorations -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-bounce"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-50 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-ping"></div>
+    </div>
 
-<section class="certifications-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title" style="color: black">Certifications</h2>
-{{--            <div class="section-title-underline"></div>--}}
-            <p class="section-subtitle">Internationally recognized standards we adhere to across our operations</p>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <!-- Header Section -->
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
+                <span class="bg-gradient-to-r from-gray-900 via-yellow-600 to-gray-900 bg-clip-text text-transparent">
+                    Certifications
+                </span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6 rounded-full"></div>
+            <p class="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Internationally recognized standards we adhere to across our operations
+            </p>
         </div>
 
         <!-- Country Tabs -->
-        <div class="country-tabs-wrapper">
-            <ul class="nav nav-pills country-tabs justify-content-center" id="countryTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tanzania-tab" data-bs-toggle="pill" data-bs-target="#tanzania" type="button" role="tab" aria-controls="tanzania" aria-selected="true">
-                        <i class="fas fa-flag"></i>
-                        Tanzania
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="ghana-tab" data-bs-toggle="pill" data-bs-target="#ghana" type="button" role="tab" aria-controls="ghana" aria-selected="false">
-                        <i class="fas fa-flag"></i>
-                        Ghana
-                    </button>
-                </li>
-            </ul>
+        <div class="flex justify-center mb-12 lg:mb-16">
+            <div class="inline-flex bg-white rounded-full p-2 shadow-lg border border-gray-100">
+                <button id="tanzania-tab" class="country-tab active flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 text-gray-600" onclick="switchTab('tanzania')">
+                    <i class="fas fa-flag text-sm"></i>
+                    <span>Tanzania</span>
+                </button>
+                <button id="ghana-tab" class="country-tab flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 text-gray-600" onclick="switchTab('ghana')">
+                    <i class="fas fa-flag text-sm"></i>
+                    <span>Ghana</span>
+                </button>
+            </div>
         </div>
 
         <!-- Tab Content -->
-        <div class="tab-content" id="countryTabsContent">
+        <div class="tab-content">
             <!-- Tanzania Tab -->
-            <div class="tab-pane fade show active" id="tanzania" role="tabpanel" aria-labelledby="tanzania-tab">
-                <div class="country-certifications">
-                    <div class="row justify-content-center">
-                        <!-- ISO 27001 Certification -->
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="certification-card">
-                                <div class="certification-icon">
-                                    <img src="{{ asset('images/certifications/27001-2013.png') }}" alt="ISO 27001 Certification" class="img-fluid certification-image" data-cert-image="{{ asset('images/certifications/27001-2013.png') }}" data-cert-title="ISO/IEC 27001:2013 Information Security Management Systems">
-                                    <div class="view-larger">
-                                        <i class="fas fa-search-plus"></i>
-                                        <span>View</span>
-                                    </div>
+            <div id="tanzania-content" class="tab-pane active opacity-100 transform translate-y-0 transition-all duration-500">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+                    <!-- ISO 27001 Card -->
+                    <div class="cert-card group bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100 hover:border-yellow-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                        <!-- Shimmer effect -->
+                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"></div>
+
+                        <div class="text-center space-y-6">
+                            <div class="relative">
+                                <div class="w-24 h-24 lg:w-28 lg:h-28 mx-auto bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <img src="{{ asset('images/certifications/27001-2013.png') }}" alt="ISO 27001 Certification" class="w-16 h-16 lg:w-20 lg:h-20 object-contain cursor-pointer" onclick="openModal('{{ asset('images/certifications/27001-2013.png') }}', 'ISO/IEC 27001:2013 Information Security Management Systems')">
                                 </div>
-                                <div class="certification-content">
-                                    <h3>ISO/IEC 27001:2013</h3>
-                                    <p>Information Security Management Systems</p>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300" onclick="openModal('{{ asset('images/certifications/27001-2013.png') }}', 'ISO/IEC 27001:2013 Information Security Management Systems')">
+                                    <i class="fas fa-search-plus text-white text-xs"></i>
                                 </div>
-                                <div class="certification-hover">
-                                    <div class="hover-content">
-                                        <p>Ensures we implement best practices for information security controls in our Tanzania operations.</p>
-                                        <button class="btn btn-light btn-sm mt-2 view-cert-btn" data-cert-image="{{ asset('images/certifications/27001-2013.png') }}" data-cert-title="ISO/IEC 27001:2013 Information Security Management Systems">
-                                            <i class="fas fa-eye"></i> View Certificate
-                                        </button>
-                                    </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">ISO/IEC 27001:2013</h3>
+                                <p class="text-gray-600">Information Security Management Systems</p>
+                            </div>
+
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/95 to-yellow-500/95 rounded-3xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+                                <div class="text-center text-gray-900 p-6">
+                                    <p class="mb-4 font-medium">Ensures we implement best practices for information security controls in our Tanzania operations.</p>
+                                    <button class="bg-white/20 backdrop-blur-sm text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-white/30 transition-colors duration-200" onclick="openModal('{{ asset('images/certifications/27001-2013.png') }}', 'ISO/IEC 27001:2013 Information Security Management Systems')">
+                                        <i class="fas fa-eye mr-2"></i>View Certificate
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- ISO 9001 Certification -->
-                        <div class="col-lg-6 col-md-6 mb-4">
-                            <div class="certification-card">
-                                <div class="certification-icon">
-                                    <img src="{{ asset('images/certifications/9001-2015.png') }}" alt="ISO 9001 Certification" class="img-fluid certification-image" data-cert-image="{{ asset('images/certifications/9001-2015.png') }}" data-cert-title="ISO 9001:2015 Quality Management Systems">
-                                    <div class="view-larger">
-                                        <i class="fas fa-search-plus"></i>
-                                        <span>View</span>
-                                    </div>
+                    <!-- ISO 9001 Card -->
+                    <div class="cert-card group bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100 hover:border-yellow-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                        <!-- Shimmer effect -->
+                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"></div>
+
+                        <div class="text-center space-y-6">
+                            <div class="relative">
+                                <div class="w-24 h-24 lg:w-28 lg:h-28 mx-auto bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <img src="{{ asset('images/certifications/9001-2015.png') }}" alt="ISO 9001 Certification" class="w-16 h-16 lg:w-20 lg:h-20 object-contain cursor-pointer" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
                                 </div>
-                                <div class="certification-content">
-                                    <h3>ISO 9001:2015</h3>
-                                    <p>Quality Management Systems</p>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
+                                    <i class="fas fa-search-plus text-white text-xs"></i>
                                 </div>
-                                <div class="certification-hover">
-                                    <div class="hover-content">
-                                        <p>Demonstrates our commitment to consistent quality and customer satisfaction in Tanzania.</p>
-                                        <button class="btn btn-light btn-sm mt-2 view-cert-btn" data-cert-image="{{ asset('images/certifications/9001-2015.png') }}" data-cert-title="ISO 9001:2015 Quality Management Systems">
-                                            <i class="fas fa-eye"></i> View Certificate
-                                        </button>
-                                    </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">ISO 9001:2015</h3>
+                                <p class="text-gray-600">Quality Management Systems</p>
+                            </div>
+
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/95 to-blue-500/95 rounded-3xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+                                <div class="text-center text-white p-6">
+                                    <p class="mb-4 font-medium">Demonstrates our commitment to consistent quality and customer satisfaction in Tanzania.</p>
+                                    <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-semibold hover:bg-white/30 transition-colors duration-200" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
+                                        <i class="fas fa-eye mr-2"></i>View Certificate
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -85,28 +106,35 @@
             </div>
 
             <!-- Ghana Tab -->
-            <div class="tab-pane fade" id="ghana" role="tabpanel" aria-labelledby="ghana-tab">
-                <div class="country-certifications">
-                    <div class="row justify-content-center">
-                        <!-- ISO 9001 Certification -->
-                        <div class="col-lg-12 col-md-12 mb-4">
-                            <div class="certification-card">
-                                <div class="certification-icon">
-                                    <img src="{{ asset('images/certifications/9001-2015.png') }}" alt="ISO 9001 Certification" class="img-fluid certification-image" data-cert-image="{{ asset('images/certifications/9001-2015.png') }}" data-cert-title="ISO 9001:2015 Quality Management Systems">
-                                    <div class="view-larger">
-                                        <i class="fas fa-search-plus"></i>
-                                        <span>View</span>
+            <div id="ghana-content" class="tab-pane hidden opacity-0 transform translate-y-4 transition-all duration-500">
+                <div class="flex justify-center mb-16">
+                    <div class="w-full max-w-md">
+                        <!-- ISO 9001 Card for Ghana -->
+                        <div class="cert-card group bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100 hover:border-orange-200 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                            <!-- Shimmer effect -->
+                            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000"></div>
+
+                            <div class="text-center space-y-6">
+                                <div class="relative">
+                                    <div class="w-24 h-24 lg:w-28 lg:h-28 mx-auto bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <img src="{{ asset('images/certifications/9001-2015.png') }}" alt="ISO 9001 Certification" class="w-16 h-16 lg:w-20 lg:h-20 object-contain cursor-pointer" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
+                                    </div>
+                                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
+                                        <i class="fas fa-search-plus text-white text-xs"></i>
                                     </div>
                                 </div>
-                                <div class="certification-content">
-                                    <h3>ISO 9001:2015</h3>
-                                    <p>Quality Management Systems</p>
+
+                                <div>
+                                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-2">ISO 9001:2015</h3>
+                                    <p class="text-gray-600">Quality Management Systems</p>
                                 </div>
-                                <div class="certification-hover">
-                                    <div class="hover-content">
-                                        <p>Demonstrates our commitment to consistent quality and customer satisfaction in Ghana.</p>
-                                        <button class="btn btn-light btn-sm mt-2 view-cert-btn" data-cert-image="{{ asset('images/certifications/9001-2015.png') }}" data-cert-title="ISO 9001:2015 Quality Management Systems">
-                                            <i class="fas fa-eye"></i> View Certificate
+
+                                <!-- Hover Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-400/95 to-orange-500/95 rounded-3xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+                                    <div class="text-center text-white p-6">
+                                        <p class="mb-4 font-medium">Demonstrates our commitment to consistent quality and customer satisfaction in Ghana.</p>
+                                        <button class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full font-semibold hover:bg-white/30 transition-colors duration-200" onclick="openModal('{{ asset('images/certifications/9001-2015.png') }}', 'ISO 9001:2015 Quality Management Systems')">
+                                            <i class="fas fa-eye mr-2"></i>View Certificate
                                         </button>
                                     </div>
                                 </div>
@@ -118,73 +146,77 @@
         </div>
 
         <!-- Description Section -->
-        <div class="certifications-description mt-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <!-- Tanzania Description -->
-                    <div class="description-content country-description active" id="tanzania-description">
-                        <h3 class="description-title">Our Certifications in Tanzania</h3>
-                        <p class="description-text">
+        <div class="border-t border-gray-200 pt-16">
+            <div class="max-w-5xl mx-auto">
+                <!-- Tanzania Description -->
+                <div id="tanzania-description" class="description-content active opacity-100 transform translate-y-0 transition-all duration-500">
+                    <div class="text-center mb-12">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Our Certifications in Tanzania</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
                             TOP ARCHIVE EA LIMITED operates in Tanzania under comprehensive ISO certifications that ensure the highest standards of data security and quality management. Our international certifications demonstrate our commitment to excellence in information security and service delivery.
                         </p>
+                    </div>
 
-                        <div class="row mt-4">
-                            <div class="col-md-6 mb-3">
-                                <div class="benefit-item">
-                                    <div class="benefit-icon">
-                                        <i class="fas fa-shield-alt"></i>
-                                    </div>
-                                    <h4>Information Security</h4>
-                                    <p>ISO/IEC 27001:2013 certified for comprehensive information security management systems.</p>
-                                </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="benefit-item group text-center">
+                            <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-shield-alt text-white text-xl"></i>
                             </div>
-
-                            <div class="col-md-6 mb-3">
-                                <div class="benefit-item">
-                                    <div class="benefit-icon">
-                                        <i class="fas fa-certificate"></i>
-                                    </div>
-                                    <h4>Quality Assurance</h4>
-                                    <p>ISO 9001:2015 certification ensuring consistent quality in records management and digitization services.</p>
-                                </div>
-                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Information Security</h4>
+                            <p class="text-gray-600 leading-relaxed">ISO/IEC 27001:2013 certified for comprehensive information security management systems.</p>
                         </div>
 
-                        <div class="compliance-note mt-4">
-                            <div class="compliance-content">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="compliance-text">
-                                    <strong>Tanzania Operations:</strong> Based at Plot 140 Nyerere Road, Kipawa, Dar es Salaam, our facility provides records management, off-site storage, digitization, software services, scanning, and archival consultation with full regulatory compliance.
-                                </div>
+                        <div class="benefit-item group text-center">
+                            <div class="bg-gradient-to-br from-blue-400 to-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Quality Assurance</h4>
+                            <p class="text-gray-600 leading-relaxed">ISO 9001:2015 certification ensuring consistent quality in records management and digitization services.</p>
                         </div>
                     </div>
 
-                    <!-- Ghana Description -->
-                    <div class="description-content country-description" id="ghana-description">
-                        <h3 class="description-title">Our Certifications in Ghana</h3>
-                        <p class="description-text">
-                            TOP ARCHIVE LIMITED operates in Ghana with ISO 9001:2015 certification ensuring the highest standards of quality management. Our international certification demonstrates our commitment to excellence in data processing and archiving services.
-                        </p>
-
-                        <div class="row mt-4">
-                            <div class="col-md-12 mb-3">
-                                <div class="benefit-item">
-                                    <div class="benefit-icon">
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <h4>Quality Excellence</h4>
-                                    <p>ISO 9001:2015 certification for data processing and archiving services with international quality standards.</p>
-                                </div>
+                    <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 border-l-4 border-yellow-400 rounded-xl p-6 lg:p-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-yellow-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <span class="font-bold text-gray-900">Tanzania Operations:</span> Based at Plot 140 Nyerere Road, Kipawa, Dar es Salaam, our facility provides records management, off-site storage, digitization, software services, scanning, and archival consultation with full regulatory compliance.
+                                </p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="compliance-note mt-4">
-                            <div class="compliance-content">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="compliance-text">
-                                    <strong>Ghana Operations:</strong> Located at Plot IND/A/6481, Heavy Industrial Area, Tema, our facility operates with ISO 9001:2015 certification, providing specialized data processing and archiving services with international quality standards.
-                                </div>
+                <!-- Ghana Description -->
+                <div id="ghana-description" class="description-content hidden opacity-0 transform translate-y-4 transition-all duration-500">
+                    <div class="text-center mb-12">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Our Certifications in Ghana</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                            TOP ARCHIVE LIMITED operates in Ghana with ISO 9001:2015 certification ensuring the highest standards of quality management. Our international certification demonstrates our commitment to excellence in data processing and archiving services.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center mb-12">
+                        <div class="benefit-item group max-w-md text-center">
+                            <div class="bg-gradient-to-br from-orange-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i class="fas fa-star text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Quality Excellence</h4>
+                            <p class="text-gray-600 leading-relaxed">ISO 9001:2015 certification for data processing and archiving services with international quality standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-orange-50 to-orange-100 border-l-4 border-orange-400 rounded-xl p-6 lg:p-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-orange-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <span class="font-bold text-gray-900">Ghana Operations:</span> Located at Plot IND/A/6481, Heavy Industrial Area, Tema, our facility operates with ISO 9001:2015 certification, providing specialized data processing and archiving services with international quality standards.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -194,628 +226,181 @@
     </div>
 </section>
 
-<!-- Certification Modal -->
-<div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="certModalLabel">Certification</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img id="modalCertImage" src="" alt="Certification" class="img-fluid">
-            </div>
+<!-- Modal -->
+<div id="certModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+    <div class="bg-white rounded-3xl p-8 max-w-2xl w-full mx-4 transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-center mb-6">
+            <h5 id="modalTitle" class="text-xl font-bold text-gray-900">Certification</h5>
+            <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="text-center">
+            <img id="modalImage" src="" alt="Certification" class="w-full h-auto rounded-xl shadow-lg">
         </div>
     </div>
 </div>
 
+<style>
+    .country-tab.active {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        color: #1f2937;
+        box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    }
+    .country-tab:not(.active):hover {
+        color: #1f2937;
+        background-color: #f9fafb;
+    }
+</style>
+
 <script>
+    // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Bootstrap tabs
-        const triggerTabList = document.querySelectorAll('#countryTabs button[data-bs-toggle="pill"]');
 
-        triggerTabList.forEach(triggerEl => {
-            triggerEl.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                // Get target country
-                const target = this.getAttribute('data-bs-target').replace('#', '');
-
-                // Hide all descriptions
-                const descriptions = document.querySelectorAll('.country-description');
-                descriptions.forEach(desc => {
-                    desc.classList.remove('active');
-                });
-
-                // Show corresponding description
-                setTimeout(() => {
-                    const targetDescription = document.getElementById(target + '-description');
-                    if (targetDescription) {
-                        targetDescription.classList.add('active');
-                    }
-                }, 150);
+        // Tab switching function
+        window.switchTab = function(country) {
+            // Update tab buttons
+            document.querySelectorAll('.country-tab').forEach(tab => {
+                tab.classList.remove('active');
             });
+            document.getElementById(country + '-tab').classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+                pane.classList.add('hidden', 'opacity-0', 'translate-y-4');
+            });
+
+            setTimeout(() => {
+                document.getElementById(country + '-content').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById(country + '-content').classList.add('active', 'opacity-100');
+                    document.getElementById(country + '-content').classList.remove('opacity-0', 'translate-y-4');
+                }, 50);
+            }, 250);
+
+            // Update descriptions
+            document.querySelectorAll('.description-content').forEach(desc => {
+                desc.classList.remove('active', 'opacity-100');
+                desc.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => {
+                    desc.classList.add('hidden');
+                }, 300);
+            });
+
+            setTimeout(() => {
+                document.getElementById(country + '-description').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById(country + '-description').classList.add('active', 'opacity-100');
+                    document.getElementById(country + '-description').classList.remove('opacity-0', 'translate-y-4');
+                }, 50);
+            }, 350);
+        };
+
+        // Modal functions
+        window.openModal = function(imageSrc, title) {
+            console.log('Opening modal with:', imageSrc, title); // Debug log
+            const modal = document.getElementById('certModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+
+            if (!modal || !modalImage || !modalTitle) {
+                console.error('Modal elements not found');
+                return;
+            }
+
+            modalImage.src = imageSrc;
+            modalTitle.textContent = title;
+
+            // Show modal
+            modal.classList.remove('invisible', 'opacity-0');
+            const modalContent = modal.querySelector('.bg-white');
+            if (modalContent) {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeModal = function() {
+            const modal = document.getElementById('certModal');
+            if (!modal) return;
+
+            modal.classList.add('opacity-0');
+            const modalContent = modal.querySelector('.bg-white');
+            if (modalContent) {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
+
+            setTimeout(() => {
+                modal.classList.add('invisible');
+                document.body.style.overflow = ''; // Restore body scroll
+            }, 300);
+        };
+
+        // Set up event listeners
+        const modal = document.getElementById('certModal');
+        if (modal) {
+            // Close modal on outside click
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
 
-        // Initialize modal functionality
-        const modal = new bootstrap.Modal(document.getElementById('certModal'));
-        const certImages = document.querySelectorAll('.certification-image');
-        const viewButtons = document.querySelectorAll('.view-cert-btn');
-        const viewLargerButtons = document.querySelectorAll('.view-larger');
-        const modalImage = document.getElementById('modalCertImage');
-        const modalTitle = document.getElementById('certModalLabel');
+        // Add click event listeners to all certificate images and buttons
+        const certImages = document.querySelectorAll('.cert-card img');
+        const viewButtons = document.querySelectorAll('.cert-card button');
+        const searchIcons = document.querySelectorAll('.fa-search-plus');
 
         // Handle image clicks
         certImages.forEach(img => {
             img.addEventListener('click', function(e) {
                 e.preventDefault();
-                const certImage = this.getAttribute('data-cert-image');
-                const certTitle = this.getAttribute('data-cert-title');
-
-                modalImage.src = certImage;
-                modalTitle.textContent = certTitle;
-                modal.show();
+                e.stopPropagation();
+                const title = this.closest('.cert-card').querySelector('h3').textContent + ' - ' +
+                    this.closest('.cert-card').querySelector('p').textContent;
+                openModal(this.src, title);
             });
         });
 
-        // Handle view button clicks (in hover overlay)
+        // Handle button clicks
         viewButtons.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                const certImage = this.getAttribute('data-cert-image');
-                const certTitle = this.getAttribute('data-cert-title');
-
-                modalImage.src = certImage;
-                modalTitle.textContent = certTitle;
-                modal.show();
+                const title = this.closest('.cert-card').querySelector('h3').textContent + ' - ' +
+                    this.closest('.cert-card').querySelector('p').textContent;
+                const img = this.closest('.cert-card').querySelector('img');
+                if (img) {
+                    openModal(img.src, title);
+                }
             });
         });
 
-        // Handle view larger button clicks (top-right corner)
-        viewLargerButtons.forEach(btn => {
-            btn.addEventListener('click', function(e) {
+        // Handle search icon clicks
+        searchIcons.forEach(icon => {
+            icon.closest('div').addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                const img = this.previousElementSibling;
-                const certImage = img.getAttribute('data-cert-image');
-                const certTitle = img.getAttribute('data-cert-title');
-
-                modalImage.src = certImage;
-                modalTitle.textContent = certTitle;
-                modal.show();
+                const title = this.closest('.cert-card').querySelector('h3').textContent + ' - ' +
+                    this.closest('.cert-card').querySelector('p').textContent;
+                const img = this.closest('.cert-card').querySelector('img');
+                if (img) {
+                    openModal(img.src, title);
+                }
             });
         });
     });
-</script>
-
-<style>
-    .certifications-section {
-        padding: 70px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #f5f5f5 100%);
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-
-    .section-title {
-        font-size: 2.3rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 15px;
-    }
-
-    .section-title-underline {
-        height: 3px;
-        width: 60px;
-        background: #ffc107;
-        margin: 0 auto 20px;
-        border-radius: 2px;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-        color: #6c757d;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    /* Country Tabs Styling */
-    .country-tabs-wrapper {
-        margin-bottom: 40px;
-    }
-
-    .country-tabs {
-        border: none;
-        gap: 15px;
-    }
-
-    .country-tabs .nav-link {
-        background: #fff;
-        border: 2px solid #e9ecef;
-        color: #6c757d;
-        padding: 12px 25px;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .country-tabs .nav-link i {
-        margin-right: 8px;
-        font-size: 0.9rem;
-    }
-
-    .country-tabs .nav-link:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-color: #ffc107;
-        color: #333;
-    }
-
-    .country-tabs .nav-link.active {
-        background: linear-gradient(135deg, #ffc107 0%, #ffab00 100%);
-        border-color: #ffc107;
-        color: #333;
-        box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
-    }
-
-    .country-tabs .nav-link.active::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-    }
-
-    .country-tabs .nav-link.active:hover::before {
-        left: 100%;
-    }
-
-    /* Tab Content */
-    .country-certifications {
-        padding-top: 20px;
-    }
-
-    .certification-card {
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        padding: 25px 15px;
-        height: 100%;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-
-    .certification-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        border-color: rgba(255, 193, 7, 0.3);
-    }
-
-    .certification-icon {
-        margin-bottom: 15px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .certification-icon img {
-        max-height: 90px;
-        max-width: 85%;
-        transition: transform 0.3s ease;
-        border-radius: 8px;
-    }
-
-    .certification-card:hover .certification-icon img {
-        transform: scale(1.1) rotate(2deg);
-    }
-
-    .certification-content h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #343a40;
-    }
-
-    .certification-content p {
-        color: #6c757d;
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-
-    /* Improved Country Badge Styling */
-    .country-badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 18px;
-        border-radius: 25px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        border: 2px solid transparent;
-        cursor: pointer;
-        margin-top: 5px;
-    }
-
-    .country-badge i {
-        margin-right: 8px;
-        font-size: 0.9rem;
-        animation: wave 2s ease-in-out infinite;
-    }
-
-    .country-badge:hover {
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .country-badge::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .country-badge:hover::before {
-        left: 100%;
-    }
-
-    /* Country-specific badge styles */
-    .country-badge.tanzania {
-        background: linear-gradient(135deg, #ffc107 0%, #ffab00 100%);
-        color: #333;
-        border-color: #ffab00;
-    }
-
-    .country-badge.tanzania:hover {
-        background: linear-gradient(135deg, #ffab00 0%, #ff8f00 100%);
-        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
-    }
-
-    .country-badge.nigeria {
-        background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-        color: #fff;
-        border-color: #27ae60;
-    }
-
-    .country-badge.nigeria:hover {
-        background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
-        box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
-    }
-
-    .country-badge.ghana {
-        background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
-        color: #fff;
-        border-color: #e67e22;
-    }
-
-    .country-badge.ghana:hover {
-        background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
-        box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
-    }
-
-    /* Pulse animation for badges */
-    @keyframes wave {
-        0%, 100% { transform: rotate(0deg); }
-        25% { transform: rotate(-5deg); }
-        75% { transform: rotate(5deg); }
-    }
-
-    @keyframes pulse {
-        0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
-        50% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
-        100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
-    }
-
-    .certification-card:hover .country-badge {
-        animation: pulse 2s ease-in-out infinite;
-    }
-
-    .certification-hover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(255, 193, 7, 0.95) 0%, rgba(255, 171, 0, 0.95) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: all 0.3s ease;
-        border-radius: 12px;
-    }
-
-    .certification-card:hover .certification-hover {
-        opacity: 1;
-    }
-
-    .hover-content {
-        padding: 20px;
-        color: #333;
-        text-align: center;
-    }
-
-    .hover-content p {
-        margin-bottom: 0;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        font-weight: 500;
-    }
-
-    /* Animation for tab switching */
-    .tab-pane {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-
-    .tab-pane.show.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @media (max-width: 991px) {
-        .certification-card {
-            margin-bottom: 25px;
-        }
-
-        .country-tabs {
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .country-tabs .nav-link {
-            padding: 10px 20px;
-            font-size: 0.9rem;
-        }
-
-        .country-badge {
-            padding: 8px 15px;
-            font-size: 0.8rem;
-        }
-
-        .country-badge i {
-            margin-right: 6px;
-            font-size: 0.8rem;
-        }
-    }
-
-    /* Description Section Styling */
-    .certifications-description {
-        padding-top: 50px;
-        border-top: 1px solid #e9ecef;
-    }
-
-    .description-content {
-        text-align: center;
-    }
-
-    /* Country-specific descriptions */
-    .country-description {
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-
-    .country-description.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .description-title {
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 20px;
-    }
-
-    .description-text {
-        font-size: 1.1rem;
-        color: #6c757d;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
-
-    .benefit-item {
-        text-align: center;
-        padding: 20px 15px;
-    }
-
-    .benefit-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #ffc107 0%, #ffab00 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-        transition: transform 0.3s ease;
-    }
-
-    .benefit-icon:hover {
-        transform: scale(1.1);
-    }
-
-    .benefit-icon i {
-        font-size: 1.5rem;
-        color: #333;
-    }
-
-    .benefit-item h4 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .benefit-item p {
-        font-size: 0.9rem;
-        color: #6c757d;
-        line-height: 1.4;
-        margin-bottom: 0;
-    }
-
-    .compliance-note {
-        background: #f8f9fa;
-        border-left: 4px solid #ffc107;
-        padding: 20px;
-        border-radius: 8px;
-    }
-
-    .compliance-content {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .compliance-content i {
-        font-size: 1.2rem;
-        color: #ffc107;
-        margin-top: 2px;
-        flex-shrink: 0;
-    }
-
-    .compliance-text {
-        font-size: 0.95rem;
-        color: #495057;
-        line-height: 1.5;
-        text-align: left;
-    }
-
-    .compliance-text strong {
-        color: #333;
-    }
-
-    @media (max-width: 991px) {
-        .certifications-description {
-            padding-top: 40px;
-        }
-
-        .description-title {
-            font-size: 1.5rem;
-        }
-
-        .description-text {
-            font-size: 1rem;
-        }
-
-        .benefit-item {
-            margin-bottom: 20px;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .section-title {
-            font-size: 1.8rem;
-        }
-
-        .certification-icon {
-            height: 90px;
-        }
-
-        .certification-icon img {
-            max-height: 80px;
-        }
-
-        .country-tabs .nav-link {
-            padding: 8px 15px;
-            font-size: 0.8rem;
-        }
-
-        .country-tabs .nav-link i {
-            margin-right: 5px;
-        }
-
-        .country-badge {
-            padding: 6px 12px;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-        }
-
-        .country-badge i {
-            margin-right: 5px;
-            font-size: 0.7rem;
-        }
-
-        .description-title {
-            font-size: 1.3rem;
-        }
-
-        .description-text {
-            font-size: 0.95rem;
-        }
-
-        .compliance-content {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .compliance-content i {
-            align-self: center;
-        }
-
-        .compliance-text {
-            text-align: center;
-        }
-    }
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-<script>
-    // Add smooth animation when switching tabs
-    document.addEventListener('DOMContentLoaded', function() {
-        const triggerTabList = document.querySelectorAll('#countryTabs button')
-
-        triggerTabList.forEach(triggerEl => {
-            const tabTrigger = new bootstrap.Tab(triggerEl)
-
-            triggerEl.addEventListener('click', event => {
-                event.preventDefault()
-
-                // Get the target country from the button id
-                const targetCountry = triggerEl.id.replace('-tab', '')
-
-                // Hide all descriptions first
-                document.querySelectorAll('.country-description').forEach(desc => {
-                    desc.classList.remove('active')
-                })
-
-                // Show the corresponding description with a slight delay
-                setTimeout(() => {
-                    tabTrigger.show()
-                    const targetDescription = document.getElementById(targetCountry + '-description')
-                    if (targetDescription) {
-                        targetDescription.classList.add('active')
-                    }
-                }, 50)
-            })
-        })
-    })
 </script>

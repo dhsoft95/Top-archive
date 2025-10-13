@@ -13,7 +13,7 @@ return [
     'services_heading' => 'Tumia huduma zetu mbalimbali',
     'services_subtext' => 'Top Archive inatoa suluhisho la kuhifadhi nyaraka zilizobinafsishwa, salama na za ufanisi ili uweze kuzingatia biashara yako kuu',
 
-    // Document Storage
+    // : Physical Archive
     'document_storage' => 'Uhifadhi wa Nyaraka',
     'storage_description' => 'Usimamizi wa faili zinazotumika na uhifadhi wa masanduku ya muda mrefu, kuhifadhi kumbukumbu salama na kupatikana.',
 

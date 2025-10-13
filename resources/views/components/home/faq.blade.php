@@ -77,7 +77,7 @@
                 <div class="border border-yellow-200 rounded-lg bg-white shadow-sm">
                     <button class="w-full px-6 py-4 text-left hover:bg-yellow-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 font-medium text-gray-800" onclick="toggleAccordion('q3')">
                         <div class="flex justify-between items-center">
-                            <span>How secure is your document storage?</span>
+                            <span>How secure is your : Physical Archive?</span>
                             <svg id="q3-icon" class="w-5 h-5 transform transition-transform duration-200 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>

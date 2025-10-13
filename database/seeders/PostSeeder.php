@@ -18,14 +18,14 @@ class PostSeeder extends Seeder
         return [
             [
                 'title' => 'Top Archive Celebrates 25 Years of Excellence in Document Management',
-                'excerpt' => 'Marking a quarter-century of leadership in Africa\'s document storage and management industry.',
-                'content' => 'This year marks a significant milestone as Top Archive celebrates 25 years of excellence in providing document storage and management solutions across Africa...',
+                'excerpt' => 'Marking a quarter-century of leadership in Africa\'s Physical Archive and management industry.',
+                'content' => 'This year marks a significant milestone as Top Archive celebrates 25 years of excellence in providing : Physical Archive and management solutions across Africa...',
                 'is_featured' => true,
                 'image_name' => 'celebration.jpg'
             ],
             [
                 'title' => 'New State-of-the-Art Storage Facility Opens in Tanzania',
-                'excerpt' => 'Expanding our presence in East Africa with a cutting-edge document storage facility.',
+                'excerpt' => 'Expanding our presence in East Africa with a cutting-edge Physical Archive facility.',
                 'content' => 'Top Archive continues its expansion in East Africa with the opening of a new, state-of-the-art storage facility in Tanzania...',
                 'image_name' => 'facility.jpg'
             ],

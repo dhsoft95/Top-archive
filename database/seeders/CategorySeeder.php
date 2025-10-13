@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            'Document Storage' => 'Solutions and services for secure document storage',
+            'Physical Archive' => 'Solutions and services for secure : Physical Archive',
             'Records Management' => 'Professional record management services and systems',
             'Digital Archiving' => 'Digital transformation and electronic archiving solutions',
             'Data Security' => 'Security measures and protocols for information protection',

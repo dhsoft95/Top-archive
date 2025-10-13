@@ -7,7 +7,7 @@ return [
         'description' => 'Top Archive provides customized, secure, and efficient archiving solutions so you can focus on your core business',
 
         'document_storage' => [
-            'title' => 'Document Storage',
+            'title' =>'Physical Archive',
             'description' => 'Active file management and long-term box storage, keeping records secure and accessible.',
             'modal' => [
                 'title' => 'Document Storage Solutions',

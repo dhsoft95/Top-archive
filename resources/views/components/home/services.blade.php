@@ -210,11 +210,11 @@
 
         {{-- Services Grid --}}
         <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{-- Document Storage --}}
+            {{-- : Physical Archive --}}
             <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
                 <div class="relative h-48 overflow-hidden">
                     <img src="assets/images/services-1.jpg"
-                         alt="Document Storage"
+                         alt=": Physical Archive"
                          class="service-image w-full h-full object-cover"
                          loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -228,7 +228,7 @@
                     </div>
 
                     <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                        {{ __('Document Storage') }}
+                        {{ __(': Physical Archive') }}
                     </h3>
 
                     <p class="service-description text-gray-600 mb-6 leading-relaxed">
@@ -405,14 +405,14 @@
 
     {{-- Tailwind CSS Modals --}}
 
-    {{-- Document Storage Modal --}}
+    {{-- : Physical Archive Modal --}}
     <div id="storageModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
         <div class="flex min-h-screen items-center justify-center p-4">
             <div class="modal-backdrop fixed inset-0 bg-gray-900/75 transition-opacity" onclick="closeModal('storageModal')"></div>
             <div class="modal-content relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-2xl transition-all">
                 {{-- Header --}}
                 <div class="flex items-center justify-between border-b border-gray-200 bg-slate-50 px-6 py-4">
-                    <h3 class="text-xl font-bold text-gray-900">{{ __('Document Storage Solutions') }}</h3>
+                    <h3 class="text-xl font-bold text-gray-900">{{ __(': Physical Archive Solutions') }}</h3>
                     <button onclick="closeModal('storageModal')" class="rounded-lg p-2 text-gray-400 hover:bg-gray-200 hover:text-gray-600 transition-colors">
                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -425,7 +425,7 @@
                     <div class="space-y-6">
                         <div class="space-y-4">
                             <p class="text-lg text-gray-700 font-medium">{{ __('Active file management and long-term box storage, keeping records secure and accessible.') }}</p>
-                            <p class="text-gray-600">{{ __('Top Archive offers several document storage solutions depending on the needs of your business.') }}</p>
+                            <p class="text-gray-600">{{ __('Top Archive offers several : Physical Archive solutions depending on the needs of your business.') }}</p>
                         </div>
 
                         <div class="rounded-lg bg-slate-50 border border-gray-200 p-4 hover:shadow-md transition-shadow">
@@ -517,7 +517,7 @@
                                 </svg>
                                 {{ __('Records Storage Boxes') }}
                             </h4>
-                            <p class="text-gray-600">{{ __('Top Archive utilises industry-standard archive boxes and cutting-edge barcoding technology for document storage, ensuring efficient tracking and inventory management of records. Benefit from our high-quality solutions to meet industry requirements and optimise your record management processes.') }}</p>
+                            <p class="text-gray-600">{{ __('Top Archive utilises industry-standard archive boxes and cutting-edge barcoding technology for : Physical Archive, ensuring efficient tracking and inventory management of records. Benefit from our high-quality solutions to meet industry requirements and optimise your record management processes.') }}</p>
                         </div>
                     </div>
                 </div>

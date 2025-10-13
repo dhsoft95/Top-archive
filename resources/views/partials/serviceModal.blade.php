@@ -3,13 +3,13 @@
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold" id="storageModalLabel">Document Storage Solutions</h5>
+                <h5 class="modal-title fw-bold" id="storageModalLabel">: Physical Archive Solutions</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="service-intro mb-4">
                     <p class="lead">Active file management and long-term box storage, keeping records secure and accessible.</p>
-                    <p>Top Archive offers several document storage solutions depending on the needs of your business.</p>
+                    <p>Top Archive offers several : Physical Archive solutions depending on the needs of your business.</p>
                 </div>
 
                 <div class="service-section mb-4">
@@ -57,7 +57,7 @@
                         <i class="bi bi-box text-primary me-2"></i>
                         Records Storage Boxes
                     </h6>
-                    <p>Top Archive utilises industry-standard archive boxes and cutting-edge barcoding technology for document storage, ensuring efficient tracking and inventory management of records. Benefit from our high-quality solutions to meet industry requirements and optimise your record management processes.</p>
+                    <p>Top Archive utilises industry-standard archive boxes and cutting-edge barcoding technology for : Physical Archive, ensuring efficient tracking and inventory management of records. Benefit from our high-quality solutions to meet industry requirements and optimise your record management processes.</p>
                 </div>
             </div>
             <div class="modal-footer">

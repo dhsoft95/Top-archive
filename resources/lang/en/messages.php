@@ -11,11 +11,11 @@ return [
     // Services Section
     'our_services' => 'Our Services',
     'services_heading' => 'Make the most of our wide range of services',
-    'services_subtext' => 'Top Archive provides customized, secure, and efficient archiving solutions so you can focus on your core business',
+    'services_subtext' => 'Top Archive can get you the exact archive service you need',
 
     // Document Storage
-    'document_storage' => 'Document Storage',
-    'storage_description' => 'Active file management and long-term box storage, keeping records secure and accessible.',
+    // 'document_storage' => 'Physical Archive',
+    // 'storage_description' => 'Active file management and long-term box storage, keeping records secure and accessible.',
 
     // Document Management
     'document_management' => 'Document Management',
@@ -45,8 +45,8 @@ return [
 
     // Hero Section
 
-    'hero_title' => 'Get Customized for Your Needs',
-    'hero_description' => 'Top Archive offers complete and customised archive and records management solutions. We focus on ensuring the efficiency, accessibility and security of your archives. You can trust us to handle all your archiving needs while you concentrate on your core business.',
+    'hero_title' => 'Top Archive can get you the exact archive service you need',
+    'hero_description' => 'Top Archive offers complete and customized archive and records management solutions. We focus on ensuring the efficiency, accessibility and security of your archives. You can trust us to handle all your archiving needs while you concentrate on your core business.',
     'get_assessment' => 'Get Free Assessment',
     'work_with_us' => 'Work With Us',
 
@@ -91,7 +91,7 @@ return [
     'our_services' => 'Our Services',
     'make_most' => 'Make the most of',
     'our_solutions' => 'our solutions',
-    'document_storage' => 'Document Storage',
+//    'document_storage' => 'Document Storage',
     'document_storage_desc' => 'Active file management and long-term box storage, keeping records secure and accessible.',
     'document_management' => 'Document Management',
     'document_management_desc' => 'We offer quick access to your business information, resource utilisation, information control and cost-effectiveness.',

@@ -24,22 +24,20 @@
                         </div>
 
                         <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-                            25 Years of Excellence in
+                            30+ Years of Excellence in
                             <span class="text-yellow-400">Document Management</span>
                         </h1>
 
-                        <p class="text-lg lg:text-xl text-gray-300 leading-relaxed">
-                            Top Archive is a leading provider in Africa's document storage, record management, and archiving industry. With 25 years of experience and a dedicated, skilled team, we serve major clients in Ghana, Nigeria, Tanzania, and Uganda. Trust us for comprehensive and superior solutions in archive storage and information management
-                        </p>
+                        <p class="text-lg lg:text-xl text-gray-300 leading-relaxed" style="text-align: justify">
+                            Top Archive excels in Africa's : Physical Archive, record management, and archiving field. With 25 years of experience and a dedicated skilled team, we serve major clients in Ghana, Nigeria, Tanzania, and Uganda. Count on us for top-notch archive storage and information management solutions.
+
                     </div>
 
                     <!-- Right content - Video -->
                     <div class="relative">
                         <div class="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group cursor-pointer bg-gray-800" onclick="openVideoModal()">
                             <img src="{{ asset('assets/images/man-works-warehouse.png') }}" alt="Warehouse Storage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
                             <!-- Play button -->
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="relative">
@@ -72,10 +70,9 @@
                             </h2>
                         </div>
                         <p class="text-lg text-gray-600 leading-relaxed">
-                            Our principle is to empower Businesses in the Digital Age with World-Class Record Storage and Information Management Solutions. Our high-standard, world-class facilities ensure streamlined storage and management of records, enabling quick access to vital business documents and information. Gain a competitive edge and enhance productivity with our comprehensive solutions for small, medium, and large-scale businesses.
+                            Our goal is to empower businesses in the digital age with top-notch record storage and information management solutions. Our high-standard facilities ensure organized storage and easy access to important documents, giving your business a competitive edge and boosting productivity. We cater to businesses of all sizes.
                         </p>
                     </div>
-
                     <!-- What We Do -->
                     <div class="space-y-6">
                         <div class="space-y-4">
@@ -87,8 +84,8 @@
                                 What We Do
                             </h2>
                         </div>
-                        <p class="text-lg text-gray-600 leading-relaxed">
-                            Optimise your office space and streamline document management. Our skilled team organises, catalogues, stores, and digitises documents using advanced electronic document management systems (EDMS)  and records management systems (ERMS). Access and retrieve records easily on your computer, supporting your daily business needs. Don't wait; take control of your documents today.
+                        <p class="text-lg text-gray-600 leading-relaxed" style="text-align: justify">
+                            We optimise your office space and streamline document management. Our skilled team organizes, catalogues, stores and digitizes documents using advanced electronic document management systems (EDMS) and electronic records management systems (ERMS), to give you easy access to your records.
                         </p>
                     </div>
                 </div>
@@ -109,8 +106,8 @@
                         </h2>
                     </div>
 
-                    <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                        Top Archive's client list includes multinational companies spanning a range of industries, including banking, insurance, oil & gas, telecom, shipping, and major government institutions. Our company has gained invaluable technical and legal expertise in managing records/information from every kind of industry, alongside our ability to respond accurately with solutions customised to the client's needs.
+                    <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto" style="text-align: center">
+                        Top Archive serves a diverse clientele, including multinational corporations in sectors like banking, insurance, oil & gas, telecom, shipping, and government institutions. We've acquired extensive technical and legal expertise in managing records across various industries, offering tailored solutions to meet each client's specific needs.
                     </p>
                 </div>
             </div>

@@ -231,6 +231,8 @@
     </div>
 </div>
 
+
+
 <!-- Social Media Modal -->
 <div id="socialModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
     <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-transform duration-300 shadow-2xl">

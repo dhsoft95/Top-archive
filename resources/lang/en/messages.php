@@ -38,7 +38,7 @@ return [
     'ghana_office' => 'Ghana Office',
     'tanzania_office' => 'Tanzania Office',
     'nigeria_office' => 'Nigeria Office',
-    'copyright' => 'Copyright 2024 Top Archive.',
+    'copyright' => 'Copyright 2026 Top Archive.',
     'terms' => 'Terms of Service',
     'privacy' => 'Privacy Policy',
     'cookies' => 'Cookies',

@@ -72,46 +72,34 @@
                 .slow-spin { animation: slow-spin 30s linear infinite; }
                 .fade-pulse { animation: fade-pulse 4s ease-in-out infinite; }
 
-                .service-card {
+                .service-row {
                     opacity: 0;
                     animation: slideInUp 0.8s ease-out forwards;
-                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
-                .service-card:nth-child(1) { animation-delay: 0.1s; }
-                .service-card:nth-child(2) { animation-delay: 0.2s; }
-                .service-card:nth-child(3) { animation-delay: 0.3s; }
-                .service-card:nth-child(4) { animation-delay: 0.4s; }
-                .service-card:nth-child(5) { animation-delay: 0.5s; }
-                .service-card:nth-child(6) { animation-delay: 0.6s; }
+                .service-row:nth-child(1) { animation-delay: 0.1s; }
+                .service-row:nth-child(2) { animation-delay: 0.2s; }
+                .service-row:nth-child(3) { animation-delay: 0.3s; }
+                .service-row:nth-child(4) { animation-delay: 0.4s; }
+                .service-row:nth-child(5) { animation-delay: 0.5s; }
 
-                .service-card:hover {
-                    transform: translateY(-12px) rotateX(5deg);
-                    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-                }
-
-                .service-card:hover .service-image {
-                    transform: scale(1.08);
-                }
-
-                .service-card:hover .service-icon {
+                .service-row:hover .service-icon {
                     transform: scale(1.1);
                     box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
                     animation: iconBounce 1s ease-in-out;
                 }
 
-                .service-card:hover .service-title {
-                    color: #d97706;
-                    transform: translateX(5px);
+                .service-row:hover .service-image {
+                    transform: scale(1.05);
                 }
 
-                .service-card:hover .learn-more-arrow {
+                .service-row:hover .learn-more-arrow {
                     transform: translateX(8px);
                 }
 
                 .cta-card {
                     opacity: 0;
-                    animation: fadeInScale 1s ease-out 0.8s forwards;
+                    animation: fadeInScale 1s ease-out 0.6s forwards;
                 }
 
                 .section-header {
@@ -143,32 +131,21 @@
                     animation: modalFadeIn 0.3s ease-out;
                 }
 
-                /* Hover effects for content */
                 .service-title {
                     transition: all 0.3s ease-in-out;
                 }
 
-                .service-description {
-                    transition: opacity 0.3s ease-in-out;
-                }
-
-                .service-card:hover .service-description {
-                    opacity: 0.8;
+                .service-row:hover .service-title {
+                    color: #d97706;
                 }
 
                 .learn-more-link:hover .learn-more-arrow {
                     animation: iconBounce 0.6s ease-in-out;
                 }
 
-                /* Loading state for images */
                 .service-image {
                     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                     background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
-                }
-
-                /* Perspective for 3D effect */
-                .services-grid {
-                    perspective: 1000px;
                 }
 
                 /* Custom scrollbar for modal */
@@ -202,9 +179,9 @@
         <div class="container mx-auto px-4 relative z-10">
             {{-- Section Header --}}
             <div class="section-header text-center max-w-3xl mx-auto mb-16">
-            <span class="section-badge inline-block bg-amber-100 text-amber-800 text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full mb-4">
-                {{ __('Our Services') }}
-            </span>
+                <span class="section-badge inline-block bg-amber-100 text-amber-800 text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full mb-4">
+                    {{ __('Our Services') }}
+                </span>
                 <h2 class="section-title text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     {{ __('What We') }} <span class="text-amber-600">{{ __('Offer') }}</span>
                 </h2>
@@ -213,198 +190,212 @@
                 </p>
             </div>
 
-            {{-- Services Grid --}}
-            <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{-- : Physical Archive --}}
-                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="assets/images/services-1.jpg"
-                             alt="Physical Archive"
-                             class="service-image w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
+            {{-- Services List (Split Layout) --}}
+            <div class="space-y-6 lg:space-y-8">
 
-                    <div class="p-8">
-                        <div class="service-icon w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-6 transition-all duration-300">
-                            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-                            </svg>
+                {{-- 01: Physical Archive --}}
+                <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
+                        <div class="order-2 md:order-1 p-8 lg:p-14">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="service-icon w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                    </svg>
+                                </div>
+                                <span class="text-amber-600 font-bold text-lg">01</span>
+                            </div>
+
+                            <h3 class="service-title text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                                {{ __('Physical Archive') }}
+                            </h3>
+
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                {{ __('Active file management and long-term box storage, keeping records secure and accessible.') }}
+                            </p>
+
+                            <button onclick="openModal('storageModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
+                                {{ __('Learn More') }}
+                                <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                            {{ __('Physical Archive') }}
-                        </h3>
-
-                        <p class="service-description text-gray-600 mb-6 leading-relaxed">
-                            {{ __('Active file management and long-term box storage, keeping records secure and accessible.') }}
-                        </p>
-
-                        <button onclick="openModal('storageModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
-                            {{ __('Learn More') }}
-                            <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                        <div class="order-1 md:order-2 relative h-[260px] md:h-full overflow-hidden">
+                            <img src="{{ asset('assets/images/services-1.jpg') }}" alt="Physical Archive" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-white/60 via-transparent to-transparent"></div>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Document Management --}}
-                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="assets/images/services-2.jpg"
-                             alt="Document Management"
-                             class="service-image w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-
-                    <div class="p-8">
-                        <div class="service-icon w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-6 transition-all duration-300">
-                            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542" />
-                            </svg>
+                {{-- 02: Document Management --}}
+                <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
+                        <div class="relative h-[260px] md:h-full overflow-hidden">
+                            <img src="{{ asset('assets/images/document_management.png') }}" alt="Document Management" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/60 via-transparent to-transparent"></div>
                         </div>
 
-                        <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                            {{ __('Document Management') }}
-                        </h3>
+                        <div class="p-8 lg:p-14">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="service-icon w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542" />
+                                    </svg>
+                                </div>
+                                <span class="text-amber-600 font-bold text-lg">02</span>
+                            </div>
 
-                        <p class="service-description text-gray-600 mb-6 leading-relaxed">
-                            {{ __('Quick access to business information, resource utilisation, and cost-effectiveness.') }}
-                        </p>
+                            <h3 class="service-title text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                                {{ __('Document Management') }}
+                            </h3>
 
-                        <button onclick="openModal('managementModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
-                            {{ __('Learn More') }}
-                            <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                {{ __('Quick access to business information, resource utilisation, and cost-effectiveness.') }}
+                            </p>
+
+                            <button onclick="openModal('managementModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
+                                {{ __('Learn More') }}
+                                <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Digital Archive --}}
-                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="assets/images/services-3.jpg"
-                             alt="Digital Archive"
-                             class="service-image w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
+                {{-- 03: Digital Archive --}}
+                <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
+                        <div class="order-2 md:order-1 p-8 lg:p-14">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="service-icon w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16.5V9.75m0 0l-3.75 3.75M12 9.75l3.75 3.75M6.75 12a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z" />
+                                    </svg>
+                                </div>
+                                <span class="text-amber-600 font-bold text-lg">03</span>
+                            </div>
 
-                    <div class="p-8">
-                        <div class="service-icon w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-6 transition-all duration-300">
-                            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16.5V9.75m0 0l-3.75 3.75M12 9.75l3.75 3.75M6.75 12a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z" />
-                            </svg>
+                            <h3 class="service-title text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                                {{ __('Digital Archive - EDMS') }}
+                            </h3>
+
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                {{ __('Access your documents digitally from any device, 24/7, from anywhere.') }}
+                            </p>
+
+                            <button onclick="openModal('digitalModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
+                                {{ __('Learn More') }}
+                                <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                            {{ __('Digital Archive - EDMS') }}
-                        </h3>
-
-                        <p class="service-description text-gray-600 mb-6 leading-relaxed">
-                            {{ __('Access your documents digitally from any device, 24/7, from anywhere.') }}
-                        </p>
-
-                        <button onclick="openModal('digitalModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
-                            {{ __('Learn More') }}
-                            <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                        <div class="order-1 md:order-2 relative h-[260px] md:h-full overflow-hidden">
+                            <img src="{{ asset('assets/images/Digital_Archive.png') }}" alt="Digital Archive" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-white/60 via-transparent to-transparent"></div>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Document Destruction --}}
-                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="assets/images/services-4.jpg"
-                             alt="Document Destruction"
-                             class="service-image w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-
-                    <div class="p-8">
-                        <div class="service-icon w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-6 transition-all duration-300">
-                            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622" />
-                            </svg>
+                {{-- 04: Document Destruction --}}
+                <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
+                        <div class="relative h-[260px] md:h-full overflow-hidden">
+                            <img src="{{ asset('assets/images/services-4.jpg') }}" alt="Document Destruction" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/60 via-transparent to-transparent"></div>
                         </div>
 
-                        <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                            {{ __('Document Destruction') }}
-                        </h3>
+                        <div class="p-8 lg:p-14">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="service-icon w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622" />
+                                    </svg>
+                                </div>
+                                <span class="text-amber-600 font-bold text-lg">04</span>
+                            </div>
 
-                        <p class="service-description text-gray-600 mb-6 leading-relaxed">
-                            {{ __('Secure, confidential destruction with a certificate for your records.') }}
-                        </p>
+                            <h3 class="service-title text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                                {{ __('Document Destruction') }}
+                            </h3>
 
-                        <button onclick="openModal('destructionModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
-                            {{ __('Learn More') }}
-                            <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                {{ __('Secure, confidential destruction with a certificate for your records.') }}
+                            </p>
+
+                            <button onclick="openModal('destructionModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
+                                {{ __('Learn More') }}
+                                <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Storage & Logistics --}}
-                <div class="service-card bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="assets/images/services-5.jpg"
-                             alt="Storage & Logistics"
-                             class="service-image w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
+                {{-- 05: Storage & Logistics --}}
+                <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
+                        <div class="order-2 md:order-1 p-8 lg:p-14">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="service-icon w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25" />
+                                    </svg>
+                                </div>
+                                <span class="text-amber-600 font-bold text-lg">05</span>
+                            </div>
 
-                    <div class="p-8">
-                        <div class="service-icon w-14 h-14 rounded-xl bg-amber-400 flex items-center justify-center mb-6 transition-all duration-300">
-                            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25" />
-                            </svg>
+                            <h3 class="service-title text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                                {{ __('Storage & Logistics') }}
+                            </h3>
+
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                {{ __('Warehousing, transportation, distribution, and inventory management.') }}
+                            </p>
+
+                            <button onclick="openModal('logisticsModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
+                                {{ __('Learn More') }}
+                                <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <h3 class="service-title text-2xl font-bold text-gray-900 mb-4">
-                            {{ __('Storage & Logistics') }}
-                        </h3>
-
-                        <p class="service-description text-gray-600 mb-6 leading-relaxed">
-                            {{ __('Warehousing, transportation, distribution, and inventory management.') }}
-                        </p>
-
-                        <button onclick="openModal('logisticsModal')" class="learn-more-link inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors duration-300">
-                            {{ __('Learn More') }}
-                            <svg class="learn-more-arrow w-5 h-5 ml-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                        <div class="order-1 md:order-2 relative h-[260px] md:h-full overflow-hidden">
+                            <img src="{{ asset('assets/images/services-5.png') }}" alt="Storage & Logistics" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-white/60 via-transparent to-transparent"></div>
+                        </div>
                     </div>
                 </div>
 
-                {{-- Call to Action Card --}}
-                <div class="cta-card bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg">
-                    <div class="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center mb-6 transition-all duration-300 hover:scale-110">
+            </div>
+
+            {{-- Call to Action Banner --}}
+            <div class="cta-card mt-10 lg:mt-14 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl p-10 lg:p-14 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+                <div class="flex items-center gap-5 text-center md:text-left">
+                    <div class="hidden md:flex w-16 h-16 rounded-xl bg-white/20 items-center justify-center flex-shrink-0">
                         <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
                         </svg>
                     </div>
-
-                    <h3 class="text-2xl font-bold text-white mb-4">
-                        {{ __('Have a Specific Need?') }}
-                    </h3>
-
-                    <p class="text-white/90 mb-8 leading-relaxed">
-                        {{ __('We offer tailored solutions. Let\'s discuss how we can help your business.') }}
-                    </p>
-
-                    <a href="#" class="inline-block bg-white text-amber-600 font-bold py-3 px-8 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                        {{ __('Contact Us') }}
-                    </a>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            {{ __('Have a Specific Need?') }}
+                        </h3>
+                        <p class="text-white/90 leading-relaxed">
+                            {{ __('We offer tailored solutions. Let\'s discuss how we can help your business.') }}
+                        </p>
+                    </div>
                 </div>
+
+                <a href="#" class="flex-shrink-0 inline-block bg-white text-amber-600 font-bold py-3 px-8 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                    {{ __('Contact Us') }}
+                </a>
             </div>
         </div>
 

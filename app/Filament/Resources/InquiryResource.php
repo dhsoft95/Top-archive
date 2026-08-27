@@ -130,7 +130,7 @@ class InquiryResource extends Resource
                                         'Ghana' => 'Ghana',
                                         'Nigeria' => 'Nigeria',
                                         'Kenya' => 'Kenya',
-                                        'Uganda' => 'Uganda',
+//                                        'Uganda' => 'Uganda',
                                         'Rwanda' => 'Rwanda',
                                         'Burundi' => 'Burundi',
                                         'Mozambique' => 'Mozambique',

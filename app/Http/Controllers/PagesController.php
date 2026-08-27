@@ -32,6 +32,11 @@ class PagesController extends Controller
         return view('contact');
     }
 
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
+
     public function switchLang($lang)
     {
         App::setLocale($lang);

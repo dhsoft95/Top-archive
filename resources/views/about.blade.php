@@ -29,8 +29,8 @@
                         </h1>
 
                         <p class="text-lg lg:text-xl text-gray-300 leading-relaxed" style="text-align: justify">
-                            Top Archive excels in Africa's : Physical Archive, record management, and archiving field. With 25 years of experience and a dedicated skilled team, we serve major clients in Ghana, Nigeria, Tanzania, and Uganda. Count on us for top-notch archive storage and information management solutions.
-
+                            Top Archive excels in Africa's Physical Archive, record management, and archiving field. With 30 years of experience and a dedicated skilled team, we serve major clients in Ghana, Nigeria and Tanzania. Count on us for top-notch archive storage and information management solutions.
+                        </p>
                     </div>
 
                     <!-- Right content - Video -->
@@ -61,7 +61,7 @@
                     <!-- Who We Are -->
                     <div class="space-y-6">
                         <div class="space-y-4">
-                            <div class="inline-flex items-center gap-2 bg-yellow-400/10 text-yellow-600 px-4 py-2 rounded-full text-sm font-medium">
+                            <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
                                 <i class="fas fa-users"></i>
                                 <span>Who we are</span>
                             </div>
@@ -70,13 +70,14 @@
                             </h2>
                         </div>
                         <p class="text-lg text-gray-600 leading-relaxed">
-                            Our goal is to empower businesses in the digital age with top-notch record storage and information management solutions. Our high-standard facilities ensure organized storage and easy access to important documents, giving your business a competitive edge and boosting productivity. We cater to businesses of all sizes.
+                            Our goal is to empower businesses in the digital age with top-notch record storage and information management solutions. Our top-notch standard facilities ensure organized storage and easy access to important documents, giving your business a competitive edge and boosting productivity. We cater to businesses of all sizes.
                         </p>
                     </div>
+
                     <!-- What We Do -->
                     <div class="space-y-6">
                         <div class="space-y-4">
-                            <div class="inline-flex items-center gap-2 bg-yellow-400/10 text-yellow-600 px-4 py-2 rounded-full text-sm font-medium">
+                            <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
                                 <i class="fas fa-cogs"></i>
                                 <span>What we do</span>
                             </div>
@@ -92,12 +93,75 @@
             </div>
         </section>
 
+        <!-- Mission, Vision & Values Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="grid lg:grid-cols-2 gap-16 mb-16">
+
+                    <!-- Mission -->
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Our Mission</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                                Mission
+                            </h2>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed" style="text-align: justify">
+                            To satisfy all our customers and other stakeholders and interested parties whenever possible, meeting and exceeding their expectations.
+                        </p>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium">
+                                <i class="fas fa-eye"></i>
+                                <span>Our Vision</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                                Vision
+                            </h2>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed" style="text-align: justify">
+                            To be the leading Records Management company and solutions provider in East and Central Africa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="text-center space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mx-auto">
+                            <i class="fas fa-star"></i>
+                            <span>Our Values</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                            Values
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                        @foreach(['Integrity', 'Reliability', 'Punctuality', 'Confidentiality'] as $value)
+                            <div class="bg-white border border-gray-200 rounded-2xl p-6">
+                                <div class="w-12 h-12 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="text-gray-900 font-semibold">{{ $value }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Our Clients Section -->
-        <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
                 <div class="space-y-8">
                     <div class="space-y-4">
-                        <div class="inline-flex items-center gap-2 bg-yellow-400/10 text-yellow-600 px-4 py-2 rounded-full text-sm font-medium mx-auto">
+                        <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mx-auto">
                             <i class="fas fa-handshake"></i>
                             <span>Our Clients</span>
                         </div>
@@ -109,6 +173,54 @@
                     <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto" style="text-align: center">
                         Top Archive serves a diverse clientele, including multinational corporations in sectors like banking, insurance, oil & gas, telecom, shipping, and government institutions. We've acquired extensive technical and legal expertise in managing records across various industries, offering tailored solutions to meet each client's specific needs.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Management Team Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <div class="text-center space-y-4 mb-12">
+                    <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mx-auto">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Our Team</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                        Management Team
+                    </h2>
+                </div>
+
+                <div class="swiper teamSwiper">
+                    <div class="swiper-wrapper pb-12">
+                        @php
+                            $team = [
+                                ['name' => 'Paul Muhato', 'title' => 'Managing Director', 'image' => 'assets/images/team/paul-muhato.png'],
+                                ['name' => 'Sophia Tendeka', 'title' => 'Operations Manager', 'image' => 'assets/images/team/sophia-tendek.jpg'],
+                                ['name' => 'Jenory Mandole', 'title' => 'Cataloguing Manager', 'image' => 'assets/images/team/jenory-mandole.jpg'],
+                                ['name' => 'Edson Nyamwihura', 'title' => 'Business Development Executive', 'image' => 'assets/images/team/edson-nyamwihura.png'],
+                                ['name' => 'Israel Mwakilembe', 'title' => 'Finance Manager', 'image' => 'assets/images/team/israel-mwakilembe.jpg'],
+                            ];
+                        @endphp
+
+                        @foreach($team as $member)
+                            <div class="swiper-slide h-auto">
+                                <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 h-full">
+                                    <div class="aspect-[4/5] overflow-hidden bg-gray-100">
+                                        <img src="{{ asset($member['image']) }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-6 text-center">
+                                        <p class="text-lg font-bold text-gray-900">{{ $member['name'] }}</p>
+                                        <p class="text-sm text-gray-600 mt-1">{{ $member['title'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    {{--                    <div class="swiper-pagination"></div>--}}
+
+                    <div class="swiper-button-prev !text-yellow-600"></div>
+                    <div class="swiper-button-next !text-yellow-600"></div>
                 </div>
             </div>
         </section>
@@ -125,30 +237,36 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="relative w-full aspect-video">
-                <iframe id="youtubeVideo" src="" class="w-full h-full" title="YouTube video" allowfullscreen></iframe>
+                <video id="localVideo" class="w-full h-full" controls playsinline>
+                    <source src="{{ asset('assets/TOP_ARCHIVE.mp4') }}" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
     <script>
         function openVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('youtubeVideo');
-
-            // Replace with your actual YouTube video URL
-            video.src = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+            const video = document.getElementById('localVideo');
 
             modal.classList.remove('invisible', 'opacity-0');
             modal.querySelector('.bg-black').classList.remove('scale-95');
             modal.querySelector('.bg-black').classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
+
+            video.play();
         }
 
         function closeVideoModal() {
             const modal = document.getElementById('videoModal');
-            const video = document.getElementById('youtubeVideo');
+            const video = document.getElementById('localVideo');
 
-            video.src = '';
+            video.pause();
+            video.currentTime = 0;
             modal.classList.add('opacity-0');
             modal.querySelector('.bg-black').classList.remove('scale-100');
             modal.querySelector('.bg-black').classList.add('scale-95');
@@ -166,8 +284,22 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeVideoModal();
         });
+
+        new Swiper('.teamSwiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 24,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 4, spaceBetween: 24 },
+            },
+        });
     </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 @endsection

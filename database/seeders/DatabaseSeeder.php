@@ -21,10 +21,12 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         $this->call([
-            UserSeeder::class,        // Run first
-            CategorySeeder::class,    // Run second
-            TagSeeder::class,         // Run third
-            PostSeeder::class,        // Run last
+            UserSeeder::class,
+            CategorySeeder::class,
+            TagSeeder::class,
+            PostSeeder::class,
+            ImgCategorySeeder::class,
+            GalleryImageSeeder::class,
         ]);
     }
 }

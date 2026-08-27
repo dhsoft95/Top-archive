@@ -100,11 +100,7 @@
                         <h3 class="mb-2 text-2xl font-medium text-gray-800">Nigeria 🇳🇬</h3>
                         <p class="m-0 text-base text-gray-500">EDMS</p>
                     </div>
-                    <div class="p-4 text-center transition-all duration-300 border border-gray-200 rounded-xl shadow-sm cursor-not-allowed hover:shadow-lg hover:border-gray-300 hover:scale-105">
-                        <img src="https://flagcdn.com/ug.svg" alt="Uganda Flag" class="h-[30px] w-auto mx-auto mb-4">
-                        <h3 class="mb-2 text-2xl font-medium text-gray-800">Uganda 🇺🇬</h3>
-                        <p class="m-0 text-base text-gray-500">EDMS</p>
-                    </div>
+
                 </div>
             </div>
         </div>

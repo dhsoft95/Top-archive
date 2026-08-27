@@ -21,5 +21,6 @@
 <!-- Footer -->
 {{--@include('includes.footer')--}}
 
+    <script src="{{ asset('js/protect.js') }}"></script>
 </body>
 </html>

@@ -86,7 +86,7 @@
                 <div class="grid md:grid-cols-2 gap-0 items-center min-h-[500px]">
                     {{-- Image Side --}}
                     <div class="relative h-[400px] md:h-full overflow-hidden">
-                        <img src="assets/images/services-2.jpg" alt="Document Management" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/document_management.png" alt="Document Management" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white via-transparent to-transparent"></div>
                     </div>
 
@@ -193,7 +193,7 @@
 
                     {{-- Image Side --}}
                     <div class="order-1 md:order-2 relative h-[400px] md:h-full overflow-hidden">
-                        <img src="assets/images/services-3.jpg" alt="Digital Archive" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/Digital_Archive.png" alt="Digital Archive" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-slate-50 via-transparent to-transparent"></div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                 <div class="grid md:grid-cols-2 gap-0 items-center min-h-[500px]">
                     {{-- Image Side --}}
                     <div class="relative h-[400px] md:h-full overflow-hidden">
-                        <img src="assets/images/services-4.jpg" alt="Document Destruction" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/Screenshot 2026-08-24 at 14.53.23.png" alt="Document Destruction" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white via-transparent to-transparent"></div>
                     </div>
 

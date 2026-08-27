@@ -39,6 +39,8 @@ Route::get('/gallery/image/{id}', [GalleryController::class, 'show'])->name('gal
 Route::get('/gallery/category/{categorySlug}', [GalleryController::class, 'byCategory'])->name('gallery.byCategory');
 Route::get('/gallery/tag/{tagSlug}', [GalleryController::class, 'byTag'])->name('gallery.byTag');
 
+Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('privacy-policy');
+
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact/thank-you', [App\Http\Controllers\ContactController::class, 'thankYou'])->name('contact.thank-you');

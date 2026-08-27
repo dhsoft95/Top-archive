@@ -47,15 +47,6 @@
                     </div>
 
                     <!-- Uganda -->
-                    <div class="col-md-6">
-                        <div class="card border h-100" style="border-radius: 16px; box-shadow: 0px 1px 3px rgba(0,0,0,0.1); transition: all 0.3s ease;">
-                            <div class="card-body text-center p-4">
-                                <img src="https://flagcdn.com/ug.svg" alt="Uganda Flag" style="width: auto; height: 30px; margin-bottom: 16px;">
-                                <h3 style="font-size: 24px; color: #2D3748; margin-bottom: 8px; font-weight: 500;">Uganda</h3>
-                                <p style="color: #718096; margin: 0; font-size: 16px;">EDMS</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

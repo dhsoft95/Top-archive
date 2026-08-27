@@ -233,76 +233,106 @@ class PostResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('featured_image')
                     ->toggleable()
-                    ->circular(),
-
+                    ->circular()
+                    ->defaultImageUrl(asset('images/placeholder.png')),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable()
                     ->wrap()
                     ->weight(FontWeight::Bold)
-                    ->description(fn (Post $record) => Str::limit($record->excerpt, 50)),
+                    ->limit(20)
+                    ->description(fn (Post $record) => Str::limit($record->excerpt, 6)),
 
                 Tables\Columns\TextColumn::make('category.name')
+                    ->badge()
+                    ->color('gray')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
 
                 Tables\Columns\TextColumn::make('author.name')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable()
+                    ->icon('heroicon-m-user-circle'),
 
-                // Added Country Column
                 Tables\Columns\TextColumn::make('country')
                     ->label(__('Country'))
-                    ->formatStateUsing(fn ($state, Post $record) =>
-                    $state ? ($record->country_flag . ' ' . $record->country_name) : ''
-                    )
+                    ->formatStateUsing(fn ($state, Post $record) => $state
+                        ? "{$record->country_flag} {$record->country_name}"
+                        : '—')
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
 
-                Tables\Columns\BadgeColumn::make('status')
+                Tables\Columns\TextColumn::make('status')
+                    ->badge()
                     ->colors([
                         'danger' => 'draft',
                         'warning' => 'reviewing',
                         'info' => 'scheduled',
                         'success' => 'published',
                         'gray' => 'archived',
-                    ]),
+                    ])
+                    ->sortable(),
 
                 Tables\Columns\IconColumn::make('is_featured')
-                    ->boolean(),
-
-                Tables\Columns\TextColumn::make('published_at')
-                    ->dateTime()
+                    ->boolean()
+                    ->trueColor('warning')
+                    ->trueIcon('heroicon-s-star')
+                    ->falseIcon('heroicon-o-star')
                     ->sortable()
                     ->toggleable(),
+
+                Tables\Columns\TextColumn::make('published_at')
+                    ->dateTime('M j, Y g:i A')
+                    ->sortable()
+                    ->toggleable()
+                    ->placeholder('Not published'),
 
                 Tables\Columns\TextColumn::make('views_count')
                     ->counts('views')
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable()
+                    ->badge()
+                    ->color('gray')
+                    ->icon('heroicon-m-eye'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('created_at', 'desc')
+            ->striped()
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
                 static::getStatusFilter(),
                 static::getCategoryFilter(),
-                static::getCountryFilter(), // Added Country Filter
+                static::getCountryFilter(),
                 static::getPublishedDateFilter(),
                 static::getFeaturedFilter(),
-            ])
+            ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
+            ->filtersFormColumns(3)
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
-                    ->successNotification(
-                        Notification::make()
-                            ->success()
-                            ->title(__('Post deleted'))
-                            ->body(__('The post has been deleted successfully.'))
-                    ),
-                Tables\Actions\ForceDeleteAction::make(),
-                Tables\Actions\RestoreAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make()
+                        ->successNotification(
+                            Notification::make()
+                                ->success()
+                                ->title(__('Post deleted'))
+                                ->body(__('The post has been deleted successfully.'))
+                        ),
+                    Tables\Actions\ForceDeleteAction::make(),
+                    Tables\Actions\RestoreAction::make(),
+                ])->tooltip('Actions'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -310,14 +340,16 @@ class PostResource extends Resource
                     Tables\Actions\ForceDeleteBulkAction::make(),
                     Tables\Actions\RestoreBulkAction::make(),
                     static::getBulkStatusUpdateAction(),
-                    static::getBulkCountryUpdateAction(), // Added Country Bulk Action
+                    static::getBulkCountryUpdateAction(),
                 ]),
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-            ]);
+            ])
+            ->deferLoading()
+            ->persistFiltersInSession()
+            ->persistSortInSession();
     }
-
     protected static function getStatusFilter(): Tables\Filters\SelectFilter
     {
         return Tables\Filters\SelectFilter::make('status')

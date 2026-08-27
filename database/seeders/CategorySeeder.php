@@ -28,12 +28,10 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $name => $description) {
-            Category::create([
-                'name' => $name,
-                'slug' => Str::slug($name),
-                'description' => $description,
-//                'is_active' => true
-            ]);
+            Category::firstOrCreate(
+                ['slug' => Str::slug($name)],
+                ['name' => $name, 'description' => $description]
+            );
         }
     }
 }

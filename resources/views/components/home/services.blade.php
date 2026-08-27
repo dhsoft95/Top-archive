@@ -204,7 +204,7 @@
                 <div class="grid md:grid-cols-2 gap-0 items-center min-h-[500px]">
                     {{-- Image Side --}}
                     <div class="relative h-[400px] md:h-full overflow-hidden">
-                        <img src="assets/images/Document_Destruction.png" alt="Document Destruction" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/destruction.png" alt="Document Destruction" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white via-transparent to-transparent"></div>
                     </div>
 
@@ -311,7 +311,7 @@
 
                     {{-- Image Side --}}
                     <div class="order-1 md:order-2 relative h-[400px] md:h-full overflow-hidden">
-                        <img src="assets/images/services-5.jpg" alt="Storage & Logistics" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/services-5.png" alt="Storage & Logistics" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-slate-50 via-transparent to-transparent"></div>
                     </div>
                 </div>

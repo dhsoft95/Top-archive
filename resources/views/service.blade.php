@@ -305,7 +305,7 @@
                 <div class="service-row group relative bg-white rounded-2xl shadow-lg overflow-hidden">
                     <div class="grid md:grid-cols-2 gap-0 items-center min-h-[380px]">
                         <div class="relative h-[260px] md:h-full overflow-hidden">
-                            <img src="{{ asset('assets/images/destruction.png') }}" alt="Document Destruction" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
+                            <img src="{{ asset('assets/images/ChatGPTImageAug272026,02_37_47PM.png') }}" alt="Document Destruction" class="service-image absolute inset-0 w-full h-full object-cover" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/60 via-transparent to-transparent"></div>
                         </div>
 

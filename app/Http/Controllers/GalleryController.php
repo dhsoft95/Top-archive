@@ -83,6 +83,19 @@ class GalleryController extends Controller
     }
 
     /**
+     * Display gallery filtered by a specific tag slug.
+     * Note: gallery images are grouped by ImgCategory, not blog tags.
+     * This route redirects tag-style URLs to the category equivalent.
+     */
+    public function byTag($tagSlug): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application
+    {
+        // Gallery images use ImgCategory (not blog Tags). Treat the slug as an
+        // ImgCategory slug so that /gallery/tag/{slug} and /gallery/category/{slug}
+        // both resolve the same resource.
+        return $this->byCategory($tagSlug);
+    }
+
+    /**
      * Display gallery filtered by a specific category.
      */
     public function byCategory($categorySlug): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application

@@ -44,6 +44,7 @@ class GalleryImageResource extends Resource
                                             ->image()
                                             ->required()
                                             ->directory('gallery-images')
+                                            ->disk('public')
                                             ->imageEditor()
                                             ->imageEditorAspectRatios([
                                                 '16:9',
@@ -121,6 +122,7 @@ class GalleryImageResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image_path')
                     ->label('Image')
+                    ->disk('public')
                     ->square()
                     ->size(70),
 

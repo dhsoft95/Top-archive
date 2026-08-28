@@ -19,6 +19,7 @@ class Post extends Model
         'content',
         'excerpt',
         'featured_image',
+        'gallery',
         'is_featured',
         'status',
         'published_at',
@@ -29,16 +30,17 @@ class Post extends Model
         'meta_keywords',
         'comments_enabled',
         'pin_to_top',
-        'country' // Added country field
+        'country',
     ];
 
     protected $casts = [
         'is_featured' => 'boolean',
         'published_at' => 'datetime',
         'deleted_at' => 'datetime',
-        'meta_keywords' => 'json',
+        'gallery' => 'array',
+        'meta_keywords' => 'array',
         'comments_enabled' => 'boolean',
-        'pin_to_top' => 'boolean'
+        'pin_to_top' => 'boolean',
     ];
 
     // Country constants

@@ -10,6 +10,7 @@
         "filament/filament": "^3.2",
         "google/apiclient": "^2.18",
         "laravel/framework": "^11.9",
+        "laravel/passport": "^13.7",
         "laravel/tinker": "^2.9",
         "masbug/flysystem-google-drive-ext": "^2.4"
     },

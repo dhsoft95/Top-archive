@@ -54,11 +54,7 @@ class BlogController extends Controller
             ->firstOrFail();
 
         // Record view
-        $post->views()->create([
-            'ip_address' => request()->ip(),
-            'user_agent' => request()->userAgent(),
-            'viewed_at' => now(),
-        ]);
+        $post->recordView(request());
 
         // Get related posts from same category
         $relatedPosts = Post::where('category_id', $post->category_id)

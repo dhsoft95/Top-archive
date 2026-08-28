@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 class Inquiry extends Model
 {
@@ -18,7 +18,8 @@ class Inquiry extends Model
         'phone',
         'message',
         'target_office',
-        'processed'
+        'processed',
+        'processing_notes',
     ];
 
     protected $casts = [
